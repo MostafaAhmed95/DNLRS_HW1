@@ -36,7 +36,7 @@ def fw(theta1,theta2,theta3,theta4,theta5,theta6):
                      ]
         #append every trnsform in this list
         trans.append(main_matrix)
-    a=np.ones((4,4))
+    a=np.identity(3)
     #loop to multiply all the transforms together in the right order
     #to get the final transform
     for i in range(6):
