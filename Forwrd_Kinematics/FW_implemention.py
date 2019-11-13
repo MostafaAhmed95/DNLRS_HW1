@@ -4,17 +4,17 @@ import numpy as np
 import sympy as sp
 #our function takes 6 joint values as input
 def fw(theta1,theta2,theta3,theta4,theta5,theta6):
-    if((theta_1>170 or theta1<-170)
+    if((theta1>170 or theta1<-170)
        or
-       (theta_2>120 or theta2<-120)
+       (theta2>120 or theta2<-120)
        or
-       (theta_3>120 or theta3<-120)
+       (theta3>120 or theta3<-120)
        or
-       (theta_4>170 or theta4<-170)
+       (theta4>170 or theta4<-170)
        or
-       (theta_5>120 or theta5<-120)
+       (theta5>120 or theta5<-120)
        or
-       (theta_6>175 or theta1<-175)):
+       (theta6>175 or theta6<-175)):
         print("one of the join angles is out of range")
         return
     rad_value=sp.pi/180
@@ -41,4 +41,4 @@ def fw(theta1,theta2,theta3,theta4,theta5,theta6):
     #to get the final transform
     for i in range(6):
         a=a.dot(np.array(trans[i]))
-    print(a.astype(float))
+    return(a.astype(float))
