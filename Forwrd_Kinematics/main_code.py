@@ -45,3 +45,13 @@ rot_vel=np.zeros(3,1)
 trd_col=np.stack((linear_vel,rot_vel))
 jac_mat=np.hstack((jac_mat,3rd_col))
 
+#classical approach
+j_partial = [
+[v[0,3].diff(q1), v[0,3].diff(q2), v[0,3].diff(q3)],
+[v[1,3].diff(q1), v[1,3].diff(q2), v[1,3].diff(q3)],
+[v[2,3].diff(q1), v[2,3].diff(q2), v[2,3].diff(q3)],
+# rotational part
+[v[0,2].diff(q1), v[0,2].diff(q2), v[0,2].diff(q3)],
+[v[1,2].diff(q1), v[1,2].diff(q2), v[1,2].diff(q3)],
+[v[2,2].diff(q1), v[2,2].diff(q2), v[2,2].diff(q3)],
+]
