@@ -9,7 +9,7 @@ R_0_0=np.identity(3)
 c=np.array([0,0,1])
 c=c.reshape(-1,3)
 d_0_3=np.array(v[:3,3])
-d_0_0=np.zeros((2, 1))
+d_0_0=np.zeros((3, 1))
 #calculate our R.c
 R=R_0_0.dot(c)
 #calculate d_0_2 - d_0_0
@@ -30,7 +30,7 @@ d=d_0_3-d_0_1
 linear_vel=np.cross(R,d)
 rot_vel=R
 #stack them
-2nd_col=np.stack((linear_vel,rot_vel))
+snd_col=np.stack((linear_vel,rot_vel))
 jac_mat=np.hstack((jac_mat,2nd_col))
 
 #our third column for the prismatic joint
@@ -42,7 +42,7 @@ d=d_0_3-d_0_2
 linear_vel=np.cross(R,d)
 rot_vel=np.zeros(3,1)
 #stack them togther
-3rd_col=np.stack((linear_vel,rot_vel))
+trd_col=np.stack((linear_vel,rot_vel))
 jac_mat=np.hstack((jac_mat,3rd_col))
 
 #calculate the jacobian
