@@ -45,4 +45,3 @@ rot_vel=np.zeros(3,1)
 trd_col=np.stack((linear_vel,rot_vel))
 jac_mat=np.hstack((jac_mat,3rd_col))
 
-#calculate the jacobian
